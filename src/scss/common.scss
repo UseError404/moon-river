@@ -1,0 +1,109 @@
+@use "base/mixins" as *;
+@use "variables" as *;
+
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $blackColor;
+  font-family: $fontFamily;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  transition: all .2s ease-in-out;
+}
+
+.social {
+  display: flex;
+  gap: rem(20);
+
+  transition: all .3s ease-in-out;
+
+  @media (max-width: $tablet) {
+    left: rem(30);
+  }
+  @media (max-width: $mobile) {
+    left: inherit;
+    right: rem(30);
+    bottom: rem(50);
+  }
+
+
+  &__link {
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    img {
+      width: rem(35);
+      height: rem(35);
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  }
+}
+
+.email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(10);
+  border-bottom: 1px solid $blackColor;
+  width: rem(250);
+  height: rem(35);
+
+
+  &__input {
+    width: 80%;
+    color: $blackColor;
+    font-family: $fontFamily;
+    font-size: rem(22);
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    &::placeholder {
+      color: $greyColor;
+
+      font-family: $fontFamily;
+      font-size: rem(22);
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    width: rem(30);
+    height: rem(15);
+    background-image: url("@img/svg/arrow-email.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.download {
+  display: flex;
+  gap: rem(15);
+
+  &__link {
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+    img {
+      width: rem(90);
+      height: rem(30);
+      object-fit: contain;
+    }
+  }
+}
